@@ -130,8 +130,8 @@ if(dlg&&openBtn&&dlg.showModal){
 /* Calendrier de disponibilités
    Pour bloquer des dates : ['arrivée','départ'] au format AAAA-MM-JJ.
    Les nuits comptées vont de l'arrivée jusqu'à la veille du départ.
-   Ces dates sont synchronisées avec les agendas Google (Réservations Le 13e + Airbnb importé). */
-var BOOKED=[['2026-10-29','2026-11-09'],['2026-11-10','2027-02-15'],['2027-07-28','2027-11-01']];
+   Ces dates sont synchronisées avec l'agenda Google « Réservations Le 13e » (compte Le13e.CarryLeRouet@gmail.com) uniquement. */
+var BOOKED=[];
 /* Adresse du script Google (voir explications) : collez ici l'URL qui finit par /exec. Laissez vide pour utiliser la liste BOOKED ci-dessus. */
 var AGENDA_URL='';
 var calEl=document.getElementById('cal');
