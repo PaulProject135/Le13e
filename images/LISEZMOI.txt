@@ -1,0 +1,25 @@
+COMMENT AJOUTER VOS PHOTOS
+==========================
+Déposez vos photos dans ce dossier "images" et donnez-leur EXACTEMENT
+l'un des noms ci-dessous. La photo se place toute seule à son emplacement.
+Formats acceptés : .jpg  .jpeg  .png  .webp
+
+PAGE D'ACCUEIL
+  accueil-principale.jpg   -> grande photo en haut de la page d'accueil
+  accueil-1.jpg            -> 1re photo sous le texte de présentation
+  accueil-2.jpg            -> 2e photo
+  accueil-3.jpg            -> 3e photo
+
+GALERIE PHOTOS (jusqu'à 8 photos par pièce, numérotées à partir de 1)
+  salon-1.jpg ... salon-8.jpg
+  chambre-1.jpg ... chambre-8.jpg
+  cuisine-1.jpg ... cuisine-8.jpg
+  salle-de-bain-1.jpg ... salle-de-bain-8.jpg
+  balcon-1.jpg ... balcon-8.jpg
+  vue-1.jpg ... vue-8.jpg
+  carry-le-rouet-1.jpg ... carry-le-rouet-8.jpg
+
+CONSEILS
+  - Écrivez les noms en minuscules, sans accent ni espace.
+  - Photos en paysage (horizontales), idéalement moins de 500 Ko chacune.
+  - Pour changer une photo, remplacez simplement le fichier par un autre du même nom.

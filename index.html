@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le 13e – Carry-le-Rouet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+<header class="top" id="hd"></header>
+<section class="band hero-band" data-bg="accueil-bandeau,accueil-1,accueil-principale"><p class="eyebrow">Bouches-du-Rhône — Côte Bleue</p><h1>Bienvenue au 13e</h1><p class="sub">Perché au 13e étage, cet appartement entièrement refait à neuf vous offre une vue dégagée sur la Côte Bleue. Moderne, lumineux et pensé pour deux, c’est le point de départ idéal pour savourer Carry-le-Rouet.</p><aside class="hero-book" aria-label="Réserver"><h2>Je réserve</h2><p>Choisissez comment réserver</p><a class="btn" href="Reservation.html#direct">En direct</a><a class="btn alt air" href="Reservation.html#plateformes">Airbnb</a><a class="btn alt abr" href="Reservation.html#plateformes">Abritel</a><small>Meilleur tarif en direct, sans frais de service</small></aside></section>
+<main class="wrap">
+
+  <div class="amen">
+    <div><span class="ic" data-i="snow"></span><b>Climatisation</b></div>
+    <div><span class="ic" data-i="wifi"></span><b>Wi-Fi</b></div>
+    <div><span class="ic" data-i="fork"></span><b>Cuisine équipée</b></div>
+	<div><span class="ic" data-i="car"></span><b>Parking Privee</b></div>
+  </div>
+
+  <div class="cards">
+    <a class="card" href="CheckIn.html"><span class="ic big" data-i="key"></span><h3>Check-in</h3><p>Arrivée de <b>15 h à 21 h</b>. L’entrée est autonome. En dehors des heures d’arrivée, tout déplacement sera facturé 25 €.</p><em>Tout savoir pour arriver →</em></a>
+    <a class="card" href="Information-Equipement.html"><span class="ic big" data-i="list"></span><h3>Informations et équipements</h3><p>Cuisine, chambre, salle de bain, Wi-Fi, climatisation et conseils pour bien vivre dans le logement.</p><em>Voir les équipements →</em></a>
+    <a class="card" href="CheckOut.html"><span class="ic big" data-i="door"></span><h3>Check-out</h3><p>Départ avant <b>11 h</b>. En cas de dépassement, une journée sera facturée si l’accord n’a pas été donné.</p><em>Préparer son départ →</em></a>
+    <a class="card" href="Regle.html"><span class="ic big" data-i="shield"></span><h3>Règles dans le logement</h3><p>Voyageurs, tranquillité, non-fumeur, animaux, propreté : les règles à connaître.</p><em>Lire les règles →</em></a>
+    <a class="card" href="Galerie.html"><span class="ic big" data-i="image"></span><h3>Galerie photos</h3><p>Toutes les photos de l’appartement, classées pièce par pièce.</p><em>Voir les photos →</em></a>
+    <a class="card" href="Parking.html"><span class="ic big" data-i="park"></span><h3>Parking</h3><p>Se garer dans la résidence et dans les alentours, avec les règles de stationnement.</p><em>Où se garer →</em></a>
+  </div>
+    <a class="mosaic" href="Galerie.html" aria-label="Voir la galerie photos">
+    <div class="ph m1" data-img="accueil-principale" data-alt="L’appartement">images/accueil-principale.jpg</div>
+    <div class="ph" data-img="accueil-1" data-alt="L’appartement">images/accueil-1.jpg</div>
+    <div class="ph" data-img="accueil-2" data-alt="L’appartement">images/accueil-2.jpg</div>
+  </a>
+
+
+  <div class="book" id="reserver">
+    <div><h2>Réserver votre séjour</h2><p>Réservez en direct au meilleur tarif, ou via Airbnb ou Abritel. Tarifs, calendrier et formulaire sur la page de réservation.</p><div class="opts"><span>En direct</span><span>·</span><span>Airbnb</span><span>·</span><span>Abritel</span></div></div>
+    <a class="btn" href="Reservation.html">Réserver</a>
+  </div>
+
+  <div class="card" id="contact">
+    <h2>Contact</h2>
+    <p style="margin:-8px 0 20px;color:var(--muted)">Une question ou un souci pendant votre séjour ? Nous répondons le plus vite possible.</p>
+    <div class="three">
+      <div class="sub-box"><h4><span class="ic" data-i="phone"></span>Téléphone</h4><p>[numéro de téléphone]</p></div>
+      <div class="sub-box"><h4><span class="ic" data-i="mail"></span>E-mail</h4><p>[adresse e-mail]</p></div>
+      <div class="sub-box"><h4><span class="ic" data-i="alert"></span>Urgence</h4><p>Pompiers 18 · SAMU 15 · Police 17 · Européen 112</p></div>
+    </div>
+    <p style="margin:22px 0 0"><a class="btn" href="mailto:votre@email.fr" id="openForm">Nous écrire</a></p>
+  </div>
+</main>
+<dialog id="formDlg" aria-labelledby="formTitle">
+  <form id="contactForm" method="dialog">
+    <button type="button" class="x" id="closeForm" aria-label="Fermer">×</button>
+    <h2 id="formTitle">Nous écrire</h2>
+    <p class="hint">Remplissez le formulaire : votre application de messagerie s’ouvrira avec le message prêt à envoyer.</p>
+    <div class="row">
+      <label>Nom et prénom *<input type="text" name="nom" required autocomplete="name"></label>
+      <label>E-mail *<input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <div class="row">
+      <label>Téléphone<input type="tel" name="tel" autocomplete="tel"></label>
+      <label>Sujet
+        <select name="sujet">
+          <option>Question avant mon séjour</option>
+          <option>Problème pendant mon séjour</option>
+          <option>Arrivée / départ</option>
+          <option>Autre</option>
+        </select>
+      </label>
+    </div>
+    <label>Message *<textarea name="message" rows="5" required></textarea></label>
+    <div class="actions">
+      <button type="button" class="btn ghost" id="cancelForm">Annuler</button>
+      <button type="submit" class="btn">Envoyer</button>
+    </div>
+  </form>
+</dialog>
+<footer>© Le 13e · Carry-le-Rouet, Côte Bleue</footer>
+<script src="script.js"></script>
+</body>
+</html>

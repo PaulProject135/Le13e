@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le 13e – Réserver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="reserver">
+<header class="top" id="hd"></header>
+<section class="band"><p class="eyebrow">Réservation</p><h1>Réserver le 13e</h1><p class="sub">Réservez en direct au meilleur tarif, ou passez par Airbnb ou Abritel.</p></section>
+<main class="wrap narrow">
+
+  <div class="card">
+    <h2>Le logement</h2>
+    <p style="margin:0 0 18px;color:var(--muted)">Au 13<sup>e</sup> étage de la tour de Carry-le-Rouet, un T2 de 46 m² entièrement refait à neuf, lumineux, avec vue dégagée sur le port et la Côte Bleue. Pensé pour deux voyageurs, à deux pas du port, des restaurants et des criques.</p>
+    <div class="amen" style="grid-template-columns:repeat(4,1fr);margin:0">
+      <div><span class="ic" data-i="users"></span><b>2 voyageurs</b></div>
+      <div><span class="ic" data-i="bed"></span><b>Lit Queen Size</b></div>
+      <div><span class="ic" data-i="snow"></span><b>Climatisation</b></div>
+      <div><span class="ic" data-i="wifi"></span><b>Wi-Fi</b></div>
+    </div>
+    <div class="qlinks"><a href="Information-Equipement.html"><span class="ic" data-i="list"></span>Voir tous les équipements</a><a href="Galerie.html"><span class="ic" data-i="image"></span>Voir les photos</a><a href="Regle.html"><span class="ic" data-i="shield"></span>Règles du logement</a></div>
+  </div>
+
+  <div class="card">
+    <h2>Tarifs</h2>
+    <div class="three">
+      <div class="sub-box"><h4>Basse saison</h4><p><span class="big">100 €</span>par nuit</p><p style="margin-top:8px;font-size:13px">Novembre à mars</p></div>
+      <div class="sub-box"><h4>Moyenne saison</h4><p><span class="big">130 €</span>par nuit</p><p style="margin-top:8px;font-size:13px">Fevrer, Avril à Juin, septembre et octobre, fêtes de fin d’année (20 déc. – 2 janv.)</p></div>
+      <div class="sub-box"><h4>Haute saison</h4><p><span class="big">180 €</span>par nuit</p><p style="margin-top:8px;font-size:13px">Juillet et août</p></div>
+    </div>
+    <ul class="rules" style="margin-top:16px">
+      <li><b>Séjour minimum.</b> 2 nuits en basse saison, 3 nuits en moyenne saison, 5 nuits en haute saison.</li>
+      <li><b>Inclus.</b> Draps, serviettes, ménage de fin de séjour et taxe de séjour.</li>
+      <li><b>Caution.</b> 30 % de la valeur du séjour, restituée si tout est en ordre.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Comment réserver</h2>
+    <ol class="steps">
+      <li><b>Choisissez vos dates</b><span>Consultez le calendrier ci-dessous : les dates barrées sont déjà prises.</span></li>
+      <li><b>Envoyez votre demande</b><span>Remplissez le formulaire de réservation directe, ou réservez sur Airbnb ou Abritel.</span></li>
+      <li><b>Confirmation</b><span>Nous vous répondons rapidement avec le prix exact et les modalités de paiement.</span></li>
+      <li><b>Acompte et caution</b><span>Le séjour est confirmé à réception de l’acompte 30 %. Le solde et la caution sont à régler avant l’arrivée.</span></li>
+      <li><b>Guide d’arrivée</b><span>Nous vous envoyons les codes et les instructions 2 jours avant votre arrivée (voir <a href="CheckIn.html">Check-in</a>).</span></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Disponibilités</h2>
+    <div class="cal" id="cal"></div>
+    <div class="legend"><span><i class="lg free"></i>Libre</span><span><i class="lg busy"></i>Occupé</span><span><i class="lg pick"></i>Votre sélection</span></div>
+    <p class="calsum" id="calsum">Cliquez sur une date d’arrivée puis sur une date de départ.</p>
+  </div>
+
+  <div class="card" id="direct">
+    <div class="chead"><span class="ic big" data-i="mail"></span><div><h2>Réservation en direct</h2><p>Meilleur tarif : aucun frais de service de plateforme.</p></div></div>
+    <form id="bookForm">
+      <div class="row">
+        <label>Nom et prénom *<input type="text" name="nom" required autocomplete="name"></label>
+        <label>E-mail *<input type="email" name="email" required autocomplete="email"></label>
+      </div>
+      <div class="row">
+        <label>Téléphone<input type="tel" name="tel" autocomplete="tel"></label>
+        <label>Voyageurs
+          <select name="voy"><option>1</option><option selected>2</option></select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Arrivée *<input type="date" name="arr" id="arr" required></label>
+        <label>Départ *<input type="date" name="dep" id="dep" required></label>
+      </div>
+      <label>Message<textarea name="message" rows="4"></textarea></label>
+      <p class="note">Votre messagerie s’ouvrira avec la demande prête à envoyer. Arrivée de 15 h à 21 h, départ avant 11 h.</p>
+      <button type="submit" class="btn">Envoyer ma demande</button>
+    </form>
+  </div>
+
+  <div class="card" id="plateformes">
+    <h2>Ou réservez sur une plateforme</h2>
+    <div class="two">
+      <div class="sub-box plat">
+        <svg class="logo" viewBox="0 0 120 34" role="img" aria-label="Airbnb"><path d="M17 4c-2 0-3.300 1.200-4.400 3.400L6 21c-1.200 2.700.4 5.600 3.200 5.600 2.200 0 4.200-1.300 7.800-5.600 3.600 4.300 5.600 5.600 7.800 5.600 2.800 0 4.400-2.900 3.200-5.600L21.400 7.400C20.300 5.200 19 4 17 4z" fill="none" stroke="#FF5A5F" stroke-width="2.200" stroke-linejoin="round"/><text x="38" y="24" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="600" fill="#FF5A5F">airbnb</text></svg>
+        <p>Paiement et messagerie via la plateforme.</p>
+        <p class="fee"><b>Frais en plus :</b> frais de service Airbnb ajoutés au prix affiché. Le total est donc plus élevé qu’en direct.</p>
+        <a class="btn" href="#" target="_blank" rel="noopener" id="lnkAirbnb">Voir sur Airbnb</a>
+      </div>
+      <div class="sub-box plat">
+        <svg class="logo" viewBox="0 0 120 34" role="img" aria-label="Abritel"><circle cx="15" cy="17" r="11" fill="#1E4E9C"/><path d="M9 18l6-6 6 6M11 17v6h8v-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="24" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="600" fill="#1E4E9C">Abritel</text></svg>
+        <p>Paiement et messagerie via la plateforme.</p>
+        <p class="fee"><b>Frais en plus :</b> frais de service Abritel ajoutés au prix affiché. Le total est donc plus élevé qu’en direct.</p>
+        <a class="btn" href="#" target="_blank" rel="noopener" id="lnkAbritel">Voir sur Abritel</a>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px">Le montant exact des frais est indiqué par chaque plateforme avant le paiement. En direct, vous payez le prix du logement, sans frais de service.</p>
+  </div>
+</main>
+<footer>© Le 13e · Carry-le-Rouet, Côte Bleue</footer>
+<script src="script.js"></script>
+</body>
+</html>

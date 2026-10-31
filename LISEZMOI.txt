@@ -1,0 +1,9 @@
+LE SITE - Le 13e, Carry-le-Rouet
+================================
+1. Ouvrez "index.html" dans votre navigateur (double-clic).
+2. Ajoutez vos photos dans le dossier "images" (voir images/LISEZMOI.txt).
+3. Pour modifier un texte, ouvrez la page .html avec un éditeur de texte
+   et remplacez les éléments entre crochets [comme ceci].
+
+Pour mettre le site en ligne, envoyez TOUT le contenu de ce dossier
+(les pages, style.css, script.js et le dossier images) chez votre hébergeur.
