@@ -110,7 +110,7 @@ window.addEventListener('scroll',function(){
 
 
 /* Formulaire « Nous écrire » : ouvre la messagerie avec le message prérempli */
-var CONTACT_EMAIL='votre@email.fr'; /* <-- remplacez par votre adresse e-mail */
+var CONTACT_EMAIL='Le13e.CarryLeRouet@gmail.com';
 var dlg=document.getElementById('formDlg'),openBtn=document.getElementById('openForm');
 if(dlg&&openBtn&&dlg.showModal){
   openBtn.addEventListener('click',function(e){e.preventDefault();dlg.showModal()});
@@ -129,8 +129,9 @@ if(dlg&&openBtn&&dlg.showModal){
 
 /* Calendrier de disponibilités
    Pour bloquer des dates : ['arrivée','départ'] au format AAAA-MM-JJ.
-   Les nuits comptées vont de l'arrivée jusqu'à la veille du départ. */
-var BOOKED=[['2026-12-20','2026-12-27'],['2027-01-05','2027-01-09']];
+   Les nuits comptées vont de l'arrivée jusqu'à la veille du départ.
+   Ces dates sont synchronisées avec les agendas Google (Réservations Le 13e + Airbnb importé). */
+var BOOKED=[['2026-10-29','2026-11-09'],['2026-11-10','2027-02-15'],['2027-07-28','2027-11-01']];
 /* Adresse du script Google (voir explications) : collez ici l'URL qui finit par /exec. Laissez vide pour utiliser la liste BOOKED ci-dessus. */
 var AGENDA_URL='';
 var calEl=document.getElementById('cal');
