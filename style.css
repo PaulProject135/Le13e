@@ -1,4 +1,4 @@
-:root{--bg:#F9F7F2;--card:#fff;--soft:#F8F6F1;--line:#E8E5DC;--ink:#1D1B18;--muted:#66645F;--blue:#5E6678;--accent:#8A6D47;--accent-d:#B0651D;color-scheme:light}
+:root{--bg:#F9F7F2;--card:#fff;--soft:#F8F6F1;--line:#E8E5DC;--ink:#1D1B18;--muted:#66645F;--blue:#5E6678;--accent:#8A6D47;--accent-dk:#6E5539;color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.65 "Inter","Helvetica Neue",Arial,sans-serif}
@@ -63,8 +63,8 @@ ul.rules{list-style:none;margin:0;padding:0}
 ul.rules li{padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
 ul.rules li:last-child{border:0}
 ul.rules b{color:var(--ink);font-weight:500}
-.btn{display:inline-block;background:var(--ink);color:#fff;padding:12px 26px;border-radius:3px;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
-.btn:hover{background:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 26px;border-radius:3px;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.btn:hover{background:var(--accent-dk)}
 footer{text-align:center;padding:32px 24px 40px;color:var(--muted);font-size:13px}
 .band.hero-band{position:relative;background-size:cover;background-position:center}
 .band.has-img{color:#fff;padding:110px 24px 100px;border-bottom:0}
@@ -144,7 +144,7 @@ dialog#formDlg::backdrop{background:rgba(20,18,15,.55)}
 .day{border:0;background:var(--soft);border-radius:3px;aspect-ratio:1;font:400 13px "Inter",Arial,sans-serif;color:var(--ink);cursor:pointer;padding:0}
 .day:hover:not(:disabled):not(.busy){outline:1px solid var(--accent)}
 .day.past{opacity:.35;cursor:default}
-.day.busy{background:#EDE9DF;color:#A8A397;text-decoration:line-through;cursor:not-allowed}
+.day.busy{background:#EDE9DF;color:#8B8578;text-decoration:line-through;cursor:not-allowed}
 .day.mid{background:#E9DFCE}
 .day.sel{background:var(--accent);color:#fff}
 .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:var(--muted)}
@@ -170,3 +170,20 @@ dialog#formDlg::backdrop{background:rgba(20,18,15,.55)}
 .qlinks a:hover{border-color:var(--accent)}
 .qlinks .ic{vertical-align:0;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);align-items:center;justify-content:center}
 .qlinks .ic svg{width:18px;height:18px}
+
+/* ===== Pack design ===== */
+/* Survol des photos : léger zoom */
+.grid .done,.mosaic .done{overflow:hidden}
+.grid .done img,.mosaic .done img{transition:transform .35s ease}
+.grid .done:hover img,.mosaic .done:hover img{transform:scale(1.04)}
+#gal .done{cursor:zoom-in}
+
+/* Lightbox galerie : clic = plein écran */
+.lb{position:fixed;inset:0;background:rgba(20,18,15,.9);display:none;place-items:center;z-index:50;padding:28px}
+.lb.on{display:grid}
+.lb img{max-width:100%;max-height:calc(100vh - 56px);border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;top:12px;right:20px;background:none;border:0;font-size:38px;line-height:1;color:#fff;cursor:pointer}
+.lb button:hover{color:#F1D9A8}
+
+/* Footer légal : seconde ligne plus discrète */
+footer small{opacity:.75}

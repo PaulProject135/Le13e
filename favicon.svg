@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#8A6D47"/>
+  <text x="32" y="36" font-family="Georgia,'Playfair Display',serif" font-size="26" font-weight="700" fill="#F9F7F2" text-anchor="middle">13e</text>
+  <path d="M10 46q5.5-4 11 0t11 0 11 0 11 0" fill="none" stroke="#EAD9BC" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M10 53q5.5-4 11 0t11 0 11 0 11 0" fill="none" stroke="#EAD9BC" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

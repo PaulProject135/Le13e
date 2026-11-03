@@ -131,7 +131,7 @@ if(dlg&&openBtn&&dlg.showModal){
    Les dates occupées proviennent de l'agenda Google « Réservations Le 13e » (compte Le13e.CarryLeRouet@gmail.com)
    via son adresse iCal publique. Pour bloquer des dates : créez un événement dans cet agenda,
    du jour d'arrivée au jour de départ. */
-var BOOKED=[];
+var BOOKED=[['2026-11-11','2026-11-16']];
 /* Adresse iCal publique de l'agenda (Paramètres de l'agenda → Adresse iCal) */
 var AGENDA_ICS='https://calendar.google.com/calendar/ical/3cf863e76aea7e47f764cb556234fdde2d432b3d0d2622876d286397f2d195e7%40group.calendar.google.com/public/basic.ics';
 var calEl=document.getElementById('cal');
@@ -226,3 +226,16 @@ if(bf){
     window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Le 13e – Réservation')+'&body='+encodeURIComponent(body);
   });
 }
+
+/* Lightbox galerie : clic sur une photo = plein écran, Échap ou clic ailleurs pour fermer */
+var lb=document.createElement('div');
+lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-label','Photo plein écran');
+lb.innerHTML='<button type="button" aria-label="Fermer">×</button><img alt="Photo du logement">';
+document.body.appendChild(lb);
+var lbImg=lb.querySelector('img');
+lb.addEventListener('click',function(e){if(e.target!==lbImg){lb.classList.remove('on');lbImg.src=''}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){lb.classList.remove('on');lbImg.src=''}});
+document.addEventListener('click',function(e){
+  var im=e.target.closest ? e.target.closest('#gal .done img') : null;
+  if(im){e.preventDefault();lbImg.src=im.src;lbImg.alt=im.alt||'Photo du logement';lb.classList.add('on')}
+});
