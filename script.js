@@ -128,12 +128,12 @@ if(dlg&&openBtn&&dlg.showModal){
 
 
 /* Calendrier de disponibilités
-   Pour bloquer des dates : ['arrivée','départ'] au format AAAA-MM-JJ.
-   Les nuits comptées vont de l'arrivée jusqu'à la veille du départ.
-   Ces dates sont synchronisées avec l'agenda Google « Réservations Le 13e » (compte Le13e.CarryLeRouet@gmail.com) uniquement. */
+   Les dates occupées proviennent de l'agenda Google « Réservations Le 13e » (compte Le13e.CarryLeRouet@gmail.com)
+   via son adresse iCal publique. Pour bloquer des dates : créez un événement dans cet agenda,
+   du jour d'arrivée au jour de départ. */
 var BOOKED=[];
-/* Adresse du script Google (voir explications) : collez ici l'URL qui finit par /exec. Laissez vide pour utiliser la liste BOOKED ci-dessus. */
-var AGENDA_URL='';
+/* Adresse iCal publique de l'agenda (Paramètres de l'agenda → Adresse iCal) */
+var AGENDA_ICS='https://calendar.google.com/calendar/ical/3cf863e76aea7e47f764cb556234fdde2d432b3d0d2622876d286397f2d195e7%40group.calendar.google.com/public/basic.ics';
 var calEl=document.getElementById('cal');
 if(calEl){
   var pad=function(n){return(n<10?'0':'')+n},iso=function(y,m,d){return y+'-'+pad(m+1)+'-'+pad(d)};
@@ -177,7 +177,37 @@ if(calEl){
     draw();
   }
   draw();
-  if(AGENDA_URL){fetch(AGENDA_URL).then(function(r){return r.json()}).then(function(l){if(Array.isArray(l)){BOOKED=l;setBusy(l);draw()}}).catch(function(){})}
+
+  /* Lecture de l'agenda Google au format iCal : extrait les périodes occupées.
+     Essai en direct, puis via relais si le navigateur bloque (CORS). */
+  function icsDate(l){
+    var v=l.split(':').pop();
+    return v.substr(0,4)+'-'+v.substr(4,2)+'-'+v.substr(6,2);
+  }
+  function parseIcs(txt){
+    var ranges=[],s=null,e=null;
+    txt.split(/\r?\n/).forEach(function(l){
+      if(l.indexOf('DTSTART')===0){s=icsDate(l)}
+      else if(l.indexOf('DTEND')===0){e=icsDate(l)}
+      else if(l.indexOf('END:VEVENT')===0){if(s&&e&&e>s){ranges.push([s,e])}s=null;e=null}
+    });
+    return ranges;
+  }
+  function applyIcs(txt){
+    var l=parseIcs(txt);
+    if(l.length){BOOKED=l;setBusy(l);draw()}
+  }
+  function tryLoad(i){
+    var urls=[
+      AGENDA_ICS,
+      'https://api.allorigins.win/raw?url='+encodeURIComponent(AGENDA_ICS),
+      'https://corsproxy.io/?url='+encodeURIComponent(AGENDA_ICS)
+    ];
+    if(i>=urls.length){return}
+    fetch(urls[i]).then(function(r){if(!r.ok){throw 0}return r.text()}).then(applyIcs).catch(function(){tryLoad(i+1)});
+  }
+  tryLoad(0);
+
   function fromInputs(){
     if(inA.value&&inD.value&&inD.value>inA.value&&!between(inA.value,inD.value)){A=inA.value;B=inD.value;sum.textContent='Du '+fr(A)+' au '+fr(B)+'.';draw()}
   }
