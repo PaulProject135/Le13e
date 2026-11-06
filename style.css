@@ -33,6 +33,7 @@ h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:400;margin:0;f
 .ic.big{width:46px;height:46px;border-radius:50%;background:#F1EEE7;align-items:center;justify-content:center;flex:none}
 .ic.big svg{width:22px;height:22px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two.full{grid-template-columns:1fr}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .sub-box{background:var(--soft);border:1px solid var(--line);border-radius:3px;padding:16px 18px}
 .sub-box h4{margin:0 0 6px;font-size:15px;font-weight:500;display:flex;gap:9px;align-items:center}
@@ -129,9 +130,9 @@ dialog#formDlg::backdrop{background:rgba(20,18,15,.55)}
 #bookForm input,#bookForm select,#bookForm textarea{display:block;width:100%;margin-top:6px;padding:11px 12px;font:400 15px/1.4 "Inter",Arial,sans-serif;color:var(--ink);background:#fff;border:1px solid #D8D3C6;border-radius:3px}
 #bookForm button.btn{border:0;cursor:pointer;font-family:inherit}
 .note{color:var(--muted);font-size:13px;margin:0 0 16px}
-.plat{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.plat{display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:26px 30px}
 .plat p{margin:0}
-.plat .logo{height:34px;width:auto}
+.plat .logo{height:48px;width:auto}
 .plat .fee{background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);padding:10px 12px;border-radius:3px}
 .plat .btn{margin-top:auto}
 .cms{display:grid;grid-template-columns:1fr 1fr;gap:28px}
